@@ -11,6 +11,9 @@ public class RecogerBasura : MonoBehaviour
 
     private bool canPickup = false;
 
+    private int reciclable;
+    private int desechable;
+
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 
@@ -53,9 +56,15 @@ public class RecogerBasura : MonoBehaviour
     }*/
     void RecogerBasuraCommand()
     {
+        int reciclableAleatoria = Random.Range(1, 10);
+        int desechableAleatoria = Random.Range(1, 10);
         if (canPickup)
         {
             Debug.Log("Comando de voz detectado: recoger");
+            reciclable+=reciclableAleatoria;
+            Debug.Log("Basura reciclable: "+ reciclable);
+            desechable+=desechableAleatoria;
+            Debug.Log("Basura desechable: "+ desechable);
             Destroy(basura); // Eliminar el cesto de basura
         }
     }
