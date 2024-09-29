@@ -22,7 +22,7 @@ public class DejarBasura : MonoBehaviour
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-
+    private int valorSuma = 1;
     void Start()
     {
         // Encontrar el script RecogerBasura
@@ -97,6 +97,7 @@ public class DejarBasura : MonoBehaviour
         if(puedeReciclar && recogerBasura.reciclable!=0){
             Debug.Log("Comando de voz detectado: reciclar");
             recogerBasura.reciclable-=1;
+            ScriptGameManager.instance.SumarPuntosR(valorSuma);
             Debug.Log("Basura reciclable: "+ recogerBasura.reciclable);
         }
     }
@@ -105,6 +106,7 @@ public class DejarBasura : MonoBehaviour
         if(puedeDesechar && recogerBasura.desechable!=0){
             Debug.Log("Comando de voz detectado: desechar");
             recogerBasura.desechable-=1;
+            ScriptGameManager.instance.SumarPuntosD(valorSuma);
             Debug.Log("Basura desechable: "+ recogerBasura.desechable);
         }
     }

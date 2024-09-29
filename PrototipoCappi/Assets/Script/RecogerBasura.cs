@@ -17,7 +17,7 @@ public class RecogerBasura : MonoBehaviour
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-
+    private int valorSuma = 1;
     void Start()
     {
        keywords.Add("recoger", () => { RecogerBasuraCommand(); });
@@ -83,6 +83,7 @@ public class RecogerBasura : MonoBehaviour
             Debug.Log("Basura reciclable: "+ reciclable);
             desechable+=desechableAleatoria;
             Debug.Log("Basura desechable: "+ desechable);
+            ScriptGameManager.instance.SumarPuntosRec(valorSuma);
             Destroy(basura); // Eliminar el cesto de basura
         }
     }
