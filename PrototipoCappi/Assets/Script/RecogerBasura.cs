@@ -12,8 +12,8 @@ public class RecogerBasura : MonoBehaviour
     private bool canPickup = false;
     //private bool dejar = false;
 
-    private int reciclable;
-    private int desechable;
+    public int reciclable {get; set;}
+    public int desechable {get; set;}
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();

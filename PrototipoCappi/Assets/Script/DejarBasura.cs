@@ -10,18 +10,28 @@ public class DejarBasura : MonoBehaviour
    public GameObject dejarIndicator; // Objeto visual que representa el área de recogida
 
     //private bool canPickup = false;
-    private bool dejar = false;
+    //private bool dejar = false;
+    private bool puedeReciclar = false;
+    private bool puedeDesechar = false;
 
-    private int reciclable;
-    private int desechable;
+     // Referencia al script RecogerBasura
+    private RecogerBasura recogerBasura;
+
+    // private int reciclable;
+    // private int desechable;
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 
     void Start()
     {
+        // Encontrar el script RecogerBasura
+        recogerBasura = FindObjectOfType<RecogerBasura>();
+        
        //keywords.Add("recoger", () => { RecogerBasuraCommand(); });
-       keywords.Add("dejar", () => { DejarBasuraCommand(); });
+       //keywords.Add("dejar", () => { DejarBasuraCommand(); });
+       keywords.Add("reciclar", () => { ReciclarCommand(); });
+       keywords.Add("desechar", () => { DesecharCommand(); });
         // Iniciar el reconocimiento de voz
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized +=  keywordRecognizer_OnPhraseRecognized;
@@ -37,10 +47,11 @@ public class DejarBasura : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que entra es el camión
-        if (other.CompareTag("ContenedorGrande")) 
+        if (other.CompareTag("Reciclable") || other.CompareTag("Desechable")) 
         {
-            dejar = true;
+            //dejar = true;
+            puedeDesechar = true;
+            puedeReciclar = true;
             Debug.Log("Camión dentro del área de descarga."); // Debug para verificar
         }
         // if(other.CompareTag("ContenedorGrande"))
@@ -52,9 +63,11 @@ public class DejarBasura : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ContenedorGrande"))
+        if (other.CompareTag("Reciclable") || other.CompareTag("Desechable"))
         {
-            dejar = false;
+            //dejar = false;
+            puedeDesechar = false;
+            puedeReciclar = false;
             Debug.Log("Camión fuera del área de descarga."); // Debug para verificar
         }
         // if (other.CompareTag("ContenedorGrande"))
@@ -64,57 +77,38 @@ public class DejarBasura : MonoBehaviour
         // }
     }
 
-    /*void Update()
-    {
-        if (canPickup && Input.GetKeyDown(KeyCode.E)) // Cambia "E" por la tecla que desees
-        {
-            Debug.Log("Cesto de basura recogido");
-            Destroy(basura); // Eliminar el cesto de basura
-        }
-    }*/
-    // void RecogerBasuraCommand()
+    // void DejarBasuraCommand()
     // {
-    //     int reciclableAleatoria = Random.Range(1, 10);
-    //     int desechableAleatoria = Random.Range(1, 10);
-    //     if (canPickup)
+    //     if(dejar)
     //     {
-    //         Debug.Log("Comando de voz detectado: recoger");
-    //         reciclable+=reciclableAleatoria;
-    //         Debug.Log("Basura reciclable: "+ reciclable);
-    //         desechable+=desechableAleatoria;
-    //         Debug.Log("Basura desechable: "+ desechable);
-    //         Destroy(basura); // Eliminar el cesto de basura
+    //         Debug.Log("Comando de voz detectado: dejar");
+    //         // reciclable-=1;
+    //         // Debug.Log("Basura reciclable: "+ reciclable);
+    //         // desechable-=1;
+    //         // Debug.Log("Basura desechable: "+ desechable);
+    //         recogerBasura.reciclable-=1;
+    //         Debug.Log("Basura reciclable: "+ recogerBasura.reciclable);
+    //         recogerBasura.desechable-=1;
+    //         Debug.Log("Basura desechable: "+ recogerBasura.desechable);
     //     }
     // }
-    void DejarBasuraCommand()
+    void ReciclarCommand()
     {
-        if(dejar)
-        {
-            Debug.Log("Comando de voz detectado: dejar");
-            reciclable-=reciclable;
-            Debug.Log("Basura reciclable: "+ reciclable);
-            desechable-=desechable;
-            Debug.Log("Basura desechable: "+ desechable);
+        if(puedeReciclar && recogerBasura.reciclable!=0){
+            Debug.Log("Comando de voz detectado: reciclar");
+            recogerBasura.reciclable-=1;
+            Debug.Log("Basura reciclable: "+ recogerBasura.reciclable);
+        }
+    }
+    void DesecharCommand()
+    {
+        if(puedeDesechar && recogerBasura.desechable!=0){
+            Debug.Log("Comando de voz detectado: desechar");
+            recogerBasura.desechable-=1;
+            Debug.Log("Basura desechable: "+ recogerBasura.desechable);
         }
     }
 
-    // void  keywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
-    // {
-    //     System.Action keywordAction;
-    //     if (keywords.TryGetValue(args.text, out keywordAction))
-    //     {
-    //         keywordAction.Invoke();
-    //     }
-    // }
+   
 
-    // void OnDestroy()
-    // {
-    //     // Parar el reconocimiento cuando el objeto sea destruido
-    //     if (keywordRecognizer != null && keywordRecognizer.IsRunning)
-    //     {
-    //         keywordRecognizer.keywordRecognizer_OnPhraseRecognized -= keywordRecognizer_OnPhraseRecognized;
-    //         keywordRecognizer.Stop();
-    //         keywordRecognizer.Dispose();
-    //     }
-    // }
 }
