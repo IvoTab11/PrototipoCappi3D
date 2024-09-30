@@ -12,8 +12,11 @@ public class RecogerBasura : MonoBehaviour
     private bool canPickup = false;
     //private bool dejar = false;
 
-    public int reciclable {get; set;}
-    public int desechable {get; set;}
+    // public int reciclable {get; set;}
+    // public int desechable {get; set;}
+    public int carton {get; set;}
+    public int plastico {get; set;}
+    public int vidrio {get; set;}
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -41,7 +44,7 @@ public class RecogerBasura : MonoBehaviour
         if (other.CompareTag("Finish")) 
         {
             canPickup = true;
-            Debug.Log("Camión dentro del área de recogida."); // Debug para verificar
+            //Debug.Log("Camión dentro del área de recogida."); // Debug para verificar
         }
         // if(other.CompareTag("ContenedorGrande"))
         // {
@@ -55,7 +58,7 @@ public class RecogerBasura : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             canPickup = false;
-            Debug.Log("Camión fuera del área de recogida."); // Debug para verificar
+            //Debug.Log("Camión fuera del área de recogida."); // Debug para verificar
         }
         // if (other.CompareTag("ContenedorGrande"))
         // {
@@ -74,15 +77,20 @@ public class RecogerBasura : MonoBehaviour
     }*/
     void RecogerBasuraCommand()
     {
-        int reciclableAleatoria = Random.Range(1, 10);
-        int desechableAleatoria = Random.Range(1, 10);
+        // int reciclableAleatoria = Random.Range(1, 10);
+        // int desechableAleatoria = Random.Range(1, 10);
+        int cartonAleatorio = Random.Range(1, 10);
+        int plasticoAleatorio = Random.Range(1, 10);
+        int vidrioAleatorio = Random.Range(1, 10);
         if (canPickup)
         {
             Debug.Log("Comando de voz detectado: recoger");
-            reciclable+=reciclableAleatoria;
-            Debug.Log("Basura reciclable: "+ reciclable);
-            desechable+=desechableAleatoria;
-            Debug.Log("Basura desechable: "+ desechable);
+            carton+=cartonAleatorio;
+            Debug.Log("Carton: "+ carton);
+            plastico+=plasticoAleatorio;
+            Debug.Log("Plastico: "+ plastico);
+            vidrio+=vidrioAleatorio;
+            Debug.Log("Vidrio: "+ vidrio);
             ScriptGameManager.instance.SumarPuntosRec(valorSuma);
             Destroy(basura); // Eliminar el cesto de basura
         }
