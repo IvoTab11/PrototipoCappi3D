@@ -9,6 +9,10 @@ TagManager:
   - Desechable
   - Taxi
   - Camion
+  - Bonus
+  - Carton
+  - Plastico
+  - Vidrio
   layers:
   - Default
   - TransparentFX
