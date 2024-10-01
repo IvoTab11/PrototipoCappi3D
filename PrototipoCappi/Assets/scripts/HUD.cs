@@ -25,13 +25,13 @@ public class HUD : MonoBehaviour
      */
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "SimplePoly City - Low Poly Assets_Demo Scene")
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
             puntosD.text = " Desechos: " + ScriptGameManager.instance.PuntosTotalesD.ToString() + "/10";
             puntosR.text = " Reciclado: " + ScriptGameManager.instance.PuntosTotalesR.ToString() + "/10";
             puntosRec.text = " Recoger: " + ScriptGameManager.instance.PuntosTotalesRec.ToString() + "/10";
 
-            puntosV.text = " Vida: " + ScriptGameManager.instance.PuntosTotalesV.ToString() + "%";
+            puntosV.text =  ScriptGameManager.instance.PuntosTotalesV.ToString() + "%";
 
             /*if (ScriptGameManager.instance.PuntosTotalesD == 10)
             {

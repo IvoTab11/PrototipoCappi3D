@@ -7,13 +7,14 @@ TagManager:
   - ContenedorGrande
   - Reciclable
   - Desechable
-  - Taxi
   - Camion
   - Bonus
   - Carton
   - Plastico
   - Vidrio
   - Basura
+  - Auto
+  - Ambulancia
   layers:
   - Default
   - TransparentFX
