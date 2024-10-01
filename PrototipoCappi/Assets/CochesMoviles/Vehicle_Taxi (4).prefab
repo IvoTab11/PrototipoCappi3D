@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4309137079482757366}
   - component: {fileID: 7322153731310634170}
   - component: {fileID: 7171732020354256832}
-  - component: {fileID: 6932881795241387114}
   - component: {fileID: 1773562164819100984}
   m_Layer: 0
   m_Name: Vehicle_Taxi (4)
@@ -120,18 +119,6 @@ MonoBehaviour:
   speed: 20
   rotationSpeed: 5
   checkpointRadius: 0.1
---- !u!114 &6932881795241387114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413799719463964655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1773562164819100984
 BoxCollider:
   m_ObjectHideFlags: 0

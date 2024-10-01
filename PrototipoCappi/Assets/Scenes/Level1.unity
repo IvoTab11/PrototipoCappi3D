@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocheMovil2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1169472852232982885, guid: 5339f64cb0e4ada45b6aafa4c8bcb598, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 4027925549159431446, guid: 5339f64cb0e4ada45b6aafa4c8bcb598, type: 3}
       propertyPath: checkpoints.Array.size
       value: 16
@@ -592,7 +596,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2235,6 +2240,10 @@ PrefabInstance:
     - target: {fileID: 4809872500942269901, guid: 6f5a2f7823cc7a447b95213f240cd1fd, type: 3}
       propertyPath: m_Name
       value: BusMovil2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809872500942269901, guid: 6f5a2f7823cc7a447b95213f240cd1fd, type: 3}
+      propertyPath: m_TagString
+      value: Camion
       objectReference: {fileID: 0}
     - target: {fileID: 7611947966745003972, guid: 6f5a2f7823cc7a447b95213f240cd1fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5457,7 +5466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191870969}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20818168, y: 0.048098214, z: -0.010250433, w: 0.9768531}
+  m_LocalRotation: {x: 0.20818168, y: 0.048098214, z: -0.010250435, w: 0.9768531}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6463,6 +6472,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contenedor: {fileID: 0}
   dejarIndicator: {fileID: 0}
+--- !u!114 &233160275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233160267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81170168d3b22945820c73be84bbe8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &234861060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7870,6 +7891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BusMovil2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4809872500942269901, guid: 6f5a2f7823cc7a447b95213f240cd1fd, type: 3}
+      propertyPath: m_TagString
+      value: Camion
+      objectReference: {fileID: 0}
     - target: {fileID: 7611947966745003972, guid: 6f5a2f7823cc7a447b95213f240cd1fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -101.800026
@@ -8482,6 +8507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vehicle_Taxi (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       propertyPath: m_RootOrder
       value: 351
@@ -8527,9 +8556,6 @@ PrefabInstance:
       addedObject: {fileID: 323702412}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 323702411}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 323702410}
   m_SourcePrefab: {fileID: 100100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
 --- !u!1 &323702409 stripped
@@ -8558,18 +8584,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9580617, y: 2.433641, z: 6.3205414}
   m_Center: {x: -0.006408452, y: 1.2162137, z: -0.19318244}
---- !u!114 &323702411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323702409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &323702412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11377,6 +11391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocheMovil1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4010868326621097234, guid: 367ad471ac8c84942a643ac1d1c860f0, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 8464686800186634302, guid: 367ad471ac8c84942a643ac1d1c860f0, type: 3}
       propertyPath: checkpoints.Array.size
       value: 16
@@ -11449,7 +11467,8 @@ PrefabInstance:
       propertyPath: checkpoints.Array.data[16]
       value: 
       objectReference: {fileID: 1901286274}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21647,6 +21666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vehicle_Taxi (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       propertyPath: m_RootOrder
       value: 351
@@ -21690,9 +21713,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1571778157}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1571778156}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1571778155}
@@ -24340,6 +24360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vehicle_Taxi (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       propertyPath: m_RootOrder
       value: 351
@@ -24379,9 +24403,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1599049872}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1599049878}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1599049879}
@@ -24437,6 +24458,10 @@ PrefabInstance:
     - target: {fileID: 4010868326621097234, guid: 367ad471ac8c84942a643ac1d1c860f0, type: 3}
       propertyPath: m_Name
       value: CocheMovil1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010868326621097234, guid: 367ad471ac8c84942a643ac1d1c860f0, type: 3}
+      propertyPath: m_TagString
+      value: Auto
       objectReference: {fileID: 0}
     - target: {fileID: 8464686800186634302, guid: 367ad471ac8c84942a643ac1d1c860f0, type: 3}
       propertyPath: checkpoints.Array.size
@@ -24510,7 +24535,8 @@ PrefabInstance:
       propertyPath: checkpoints.Array.data[16]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -24902,6 +24928,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100014, guid: b836817eff26a034bbd13884590ce648, type: 3}
       insertIndex: -1
       addedObject: {fileID: 233160274}
+    - targetCorrespondingSourceObject: {fileID: 100014, guid: b836817eff26a034bbd13884590ce648, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233160275}
   m_SourcePrefab: {fileID: 100100000, guid: b836817eff26a034bbd13884590ce648, type: 3}
 --- !u!4 &935013508 stripped
 Transform:
@@ -26760,6 +26789,10 @@ PrefabInstance:
     - target: {fileID: 5551788591489008000, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
       propertyPath: m_Name
       value: CochePoliciaMovil (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551788591489008000, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
+      propertyPath: m_TagString
+      value: Auto
       objectReference: {fileID: 0}
     - target: {fileID: 7964470287726012985, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
       propertyPath: checkpoints.Array.size
@@ -39810,6 +39843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BusMovil1
       objectReference: {fileID: 0}
+    - target: {fileID: 2635029123272342635, guid: b1f9888650b8b02439e87b70e8bc4846, type: 3}
+      propertyPath: m_TagString
+      value: Camion
+      objectReference: {fileID: 0}
     - target: {fileID: 3287487481761614293, guid: b1f9888650b8b02439e87b70e8bc4846, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -42959,18 +42996,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9580617, y: 2.433641, z: 6.3205414}
   m_Center: {x: -0.006408452, y: 1.2162137, z: -0.19318244}
---- !u!114 &1571778156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571778154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1571778157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43512,18 +43537,6 @@ MonoBehaviour:
   speed: 20
   rotationSpeed: 5
   checkpointRadius: 0.1
---- !u!114 &1599049878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599049868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1599049879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44245,6 +44258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vehicle_Taxi (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       propertyPath: m_RootOrder
       value: 351
@@ -44290,9 +44307,6 @@ PrefabInstance:
       addedObject: {fileID: 1619812932}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1619812931}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1619812930}
   m_SourcePrefab: {fileID: 100100000, guid: 05aec82adc02f16409639716322b1673, type: 3}
 --- !u!1 &1619812929 stripped
@@ -44321,18 +44335,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9580617, y: 2.433641, z: 6.3205414}
   m_Center: {x: -0.006408452, y: 1.2162137, z: -0.19318244}
---- !u!114 &1619812931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619812929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1619812932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51730,6 +51732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BusMovil1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2635029123272342635, guid: b1f9888650b8b02439e87b70e8bc4846, type: 3}
+      propertyPath: m_TagString
+      value: Camion
+      objectReference: {fileID: 0}
     - target: {fileID: 3287487481761614293, guid: b1f9888650b8b02439e87b70e8bc4846, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -52233,6 +52239,10 @@ PrefabInstance:
     - target: {fileID: 562605348823843749, guid: 89f65974843f6ba459a4452715fa8a9a, type: 3}
       propertyPath: m_Name
       value: Vehicle_Ambulance (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 562605348823843749, guid: 89f65974843f6ba459a4452715fa8a9a, type: 3}
+      propertyPath: m_TagString
+      value: Ambulancia
       objectReference: {fileID: 0}
     - target: {fileID: 2005354227335390140, guid: 89f65974843f6ba459a4452715fa8a9a, type: 3}
       propertyPath: speed
@@ -53321,6 +53331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CochePoliciaMovil
       objectReference: {fileID: 0}
+    - target: {fileID: 5551788591489008000, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 7964470287726012985, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
       propertyPath: checkpoints.Array.size
       value: 11
@@ -53409,7 +53423,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -59562,6 +59577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocheMovil2
       objectReference: {fileID: 0}
+    - target: {fileID: 1169472852232982885, guid: 5339f64cb0e4ada45b6aafa4c8bcb598, type: 3}
+      propertyPath: m_TagString
+      value: Auto
+      objectReference: {fileID: 0}
     - target: {fileID: 4027925549159431446, guid: 5339f64cb0e4ada45b6aafa4c8bcb598, type: 3}
       propertyPath: checkpoints.Array.size
       value: 16
@@ -59674,7 +59693,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -61029,6 +61049,10 @@ PrefabInstance:
     - target: {fileID: 5551788591489008000, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
       propertyPath: m_Name
       value: CochePoliciaMovil (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551788591489008000, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
+      propertyPath: m_TagString
+      value: Auto
       objectReference: {fileID: 0}
     - target: {fileID: 7964470287726012985, guid: b18f4e9744fdd6b44926d466e5bbdd7e, type: 3}
       propertyPath: checkpoints.Array.size

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5537655065281582242}
   - component: {fileID: 6881696976347985699}
   - component: {fileID: 7952942470111144743}
-  - component: {fileID: 1754863059724847712}
   - component: {fileID: 2496802576072684886}
   m_Layer: 0
   m_Name: BusMovil2
@@ -107,18 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.6946042, y: 3.5785658, z: 9.302494}
   m_Center: {x: -0.001397848, y: 1.784227, z: -0.050180905}
---- !u!114 &1754863059724847712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809872500942269901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2496802576072684886
 MonoBehaviour:
   m_ObjectHideFlags: 0

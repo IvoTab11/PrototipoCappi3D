@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 866364750383328137}
   - component: {fileID: 8693981282094938694}
   - component: {fileID: 8079095748129162158}
-  - component: {fileID: 7796469300395881359}
   - component: {fileID: 8464686800186634302}
   m_Layer: 0
   m_Name: CocheMovil1
@@ -107,18 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.1007774, y: 2.2749152, z: 5.7322326}
   m_Center: {x: -0.090745084, y: 1.1287856, z: 0.091878764}
---- !u!114 &7796469300395881359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4010868326621097234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8464686800186634302
 MonoBehaviour:
   m_ObjectHideFlags: 0

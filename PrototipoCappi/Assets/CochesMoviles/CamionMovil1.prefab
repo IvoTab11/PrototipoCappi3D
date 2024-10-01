@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 27125908560084876}
   - component: {fileID: 5689507104308392110}
   - component: {fileID: 3010882531946022303}
-  - component: {fileID: 433630430706653562}
   - component: {fileID: 2727792589374134129}
   m_Layer: 0
   m_Name: CamionMovil1
@@ -107,18 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.6267579, y: 4.161127, z: 9.088188}
   m_Center: {x: -0.0047367807, y: 2.0722384, z: 0.029732224}
---- !u!114 &433630430706653562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774874559267987662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea12b209ab339047bbfda5add3db31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2727792589374134129
 MonoBehaviour:
   m_ObjectHideFlags: 0
