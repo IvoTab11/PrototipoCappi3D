@@ -41,7 +41,7 @@ public class RecogerBasura : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Verifica si el objeto que entra es el camión
-        if (other.CompareTag("Finish")) 
+        if (other.CompareTag("Basura")) 
         {
             canPickup = true;
             //Debug.Log("Camión dentro del área de recogida."); // Debug para verificar
@@ -55,26 +55,13 @@ public class RecogerBasura : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Finish"))
+        if (other.CompareTag("Basura"))
         {
             canPickup = false;
             //Debug.Log("Camión fuera del área de recogida."); // Debug para verificar
         }
-        // if (other.CompareTag("ContenedorGrande"))
-        // {
-        //     dejar = false;
-        //     Debug.Log("Camión fuera del área de descarga."); // Debug para verificar
-        // }
     }
 
-    /*void Update()
-    {
-        if (canPickup && Input.GetKeyDown(KeyCode.E)) // Cambia "E" por la tecla que desees
-        {
-            Debug.Log("Cesto de basura recogido");
-            Destroy(basura); // Eliminar el cesto de basura
-        }
-    }*/
     void RecogerBasuraCommand()
     {
         // int reciclableAleatoria = Random.Range(1, 10);
@@ -93,37 +80,8 @@ public class RecogerBasura : MonoBehaviour
             Debug.Log("Vidrio: "+ vidrio);
             ScriptGameManager.instance.SumarPuntosRec(valorSuma);
             Destroy(basura); // Eliminar el cesto de basura
+            canPickup = false;
         }
     }
-    // void DejarBasuraCommand()
-    // {
-    //     if(dejar)
-    //     {
-    //         Debug.Log("Comando de voz detectado: dejar");
-    //         reciclable-=reciclable;
-    //         Debug.Log("Basura reciclable: "+ reciclable);
-    //         desechable-=desechable;
-    //         Debug.Log("Basura desechable: "+ desechable);
-    //     }
-    // }
-
-    // void  keywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
-    // {
-    //     System.Action keywordAction;
-    //     if (keywords.TryGetValue(args.text, out keywordAction))
-    //     {
-    //         keywordAction.Invoke();
-    //     }
-    // }
-
-    // void OnDestroy()
-    // {
-    //     // Parar el reconocimiento cuando el objeto sea destruido
-    //     if (keywordRecognizer != null && keywordRecognizer.IsRunning)
-    //     {
-    //         keywordRecognizer.keywordRecognizer_OnPhraseRecognized -= keywordRecognizer_OnPhraseRecognized;
-    //         keywordRecognizer.Stop();
-    //         keywordRecognizer.Dispose();
-    //     }
-    // }
+    
 }

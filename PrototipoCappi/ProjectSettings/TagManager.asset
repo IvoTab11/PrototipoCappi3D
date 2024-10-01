@@ -13,6 +13,7 @@ TagManager:
   - Carton
   - Plastico
   - Vidrio
+  - Basura
   layers:
   - Default
   - TransparentFX
