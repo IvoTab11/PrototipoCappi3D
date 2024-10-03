@@ -15,6 +15,7 @@ TagManager:
   - Basura
   - Auto
   - Ambulancia
+  - Taller
   layers:
   - Default
   - TransparentFX
