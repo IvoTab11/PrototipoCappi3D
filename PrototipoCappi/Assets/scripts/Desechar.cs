@@ -5,7 +5,6 @@ using UnityEngine;
 public class Desechar : MonoBehaviour
 {
     /*Una variable privada que almacena un valor numurico inicializado en 1*/
-    private int valorSuma = 1;
 
 
 
@@ -26,7 +25,7 @@ public class Desechar : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ScriptGameManager.instance.SumarPuntosD(valorSuma);
+          //  ScriptGameManager.instance.SumarPuntosD(valorSuma);
             Destroy(this.gameObject);
         }
 

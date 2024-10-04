@@ -6,7 +6,6 @@ public class Ball : MonoBehaviour
 {
    
     /*Una variable privada que almacena un valor num?rico inicializado en 1*/
-    private int valorSuma = 1;
 
 
     
@@ -27,7 +26,7 @@ public class Ball : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ScriptGameManager.instance.SumarPuntosD(valorSuma);
+            //ScriptGameManager.instance.SumarPuntosD(valorSuma);
             Destroy(this.gameObject);
         }
 

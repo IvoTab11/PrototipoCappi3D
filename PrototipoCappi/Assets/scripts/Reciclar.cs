@@ -5,7 +5,6 @@ using UnityEngine;
 public class Reciclar : MonoBehaviour
 {
     /*Una variable privada que almacena un valor num?rico inicializado en 1*/
-    private int valorSuma = 1;
 
 
 
@@ -26,7 +25,7 @@ public class Reciclar : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ScriptGameManager.instance.SumarPuntosR(valorSuma);
+           // ScriptGameManager.instance.SumarPuntosR(valorSuma);
             Destroy(this.gameObject);
         }
 
