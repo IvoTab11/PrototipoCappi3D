@@ -8,7 +8,7 @@ public class DejarBasura : MonoBehaviour
 {
    public GameObject contenedor;
    public GameObject dejarIndicator; // Objeto visual que representa el área de recogida
-
+  
     // private bool puedeReciclar = false;
     // private bool puedeDesechar = false;
     private bool tirarCarton = false;
@@ -23,7 +23,6 @@ public class DejarBasura : MonoBehaviour
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-    private int valorSuma = 1;
     void Start()
     {
         // Encontrar el script RecogerBasura
@@ -111,25 +110,33 @@ public class DejarBasura : MonoBehaviour
     
     void CartonCommand(){
         if(tirarCarton && recogerBasura.carton!=0){
+            int Aleatorio = Random.Range(1, 10);
             Debug.Log("Comando de voz detectado: carton");
             recogerBasura.carton-=recogerBasura.carton;
-            ScriptGameManager.instance.SumarPuntosD(valorSuma);
+            ScriptGameManager.instance.RestarPuntosCarton();
+            ScriptGameManager.instance.SumarPuntosReciclaje(Aleatorio);
+
             Debug.Log("Carton: "+ recogerBasura.carton);
         }
     }
     void PlasticoCommand(){
         if(tirarPlastico && recogerBasura.plastico!=0){
+            int Aleatorio = Random.Range(1, 10);
             Debug.Log("Comando de voz detectado: plastico");
             recogerBasura.plastico-=recogerBasura.plastico;
-            ScriptGameManager.instance.SumarPuntosD(valorSuma);
+            ScriptGameManager.instance.RestarPuntosPlastico();
             Debug.Log("Plastico: "+ recogerBasura.plastico);
+            ScriptGameManager.instance.SumarPuntosReciclaje(Aleatorio);
+
         }
     }
     void VidrioCommand(){
         if(tirarVidrio && recogerBasura.vidrio!=0){
+            int Aleatorio = Random.Range(1, 10);
             Debug.Log("Comando de voz detectado: vidrio");
             recogerBasura.vidrio-=recogerBasura.vidrio;
-            ScriptGameManager.instance.SumarPuntosD(valorSuma);
+           ScriptGameManager.instance.RestarPuntosVidrio();
+            ScriptGameManager.instance.SumarPuntosReciclaje(Aleatorio);
             Debug.Log("Vidrio: "+ recogerBasura.vidrio);
         }
     }
