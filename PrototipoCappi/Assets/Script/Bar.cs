@@ -20,9 +20,14 @@ public class Bar : MonoBehaviour
     }
 
     public void AnimateBar(){
-        LeanTween.scaleX(bar, 1, time);
+        LeanTween.scaleX(bar, 1, time).setOnComplete(OnBarFull);
         // if(time<=1){
         //     SceneManager.LoadScene("Game Over");
         // }
+    }
+    void OnBarFull()
+    {
+        // Cambiar a la nueva escena cuando la animación termine
+        SceneManager.LoadScene("Game Over");
     }
 }
