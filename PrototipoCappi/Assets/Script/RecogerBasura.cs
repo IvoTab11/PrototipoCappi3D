@@ -18,7 +18,6 @@ public class RecogerBasura : MonoBehaviour
 
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-    private int valorSuma = 1;
     void Start()
     {
        keywords.Add("recoger", () => { RecogerBasuraCommand(); });
@@ -66,11 +65,13 @@ public class RecogerBasura : MonoBehaviour
             Debug.Log("Comando de voz detectado: recoger");
             carton+=cartonAleatorio;
             Debug.Log("Carton: "+ carton);
-            plastico+=plasticoAleatorio;
+            ScriptGameManager.instance.SumarPuntosCarton(carton);
+            plastico += plasticoAleatorio;
             Debug.Log("Plastico: "+ plastico);
-            vidrio+=vidrioAleatorio;
+            ScriptGameManager.instance.SumarPuntosPlastico(plastico);
+            vidrio += vidrioAleatorio;
             Debug.Log("Vidrio: "+ vidrio);
-            ScriptGameManager.instance.SumarPuntosRec(valorSuma);
+            ScriptGameManager.instance.SumarPuntosVidrio(vidrio);
             //Destroy(basura); // Eliminar el cesto de basura
              Destroy(currentTrash);
             canPickup = false;

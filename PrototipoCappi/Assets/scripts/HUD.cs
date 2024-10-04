@@ -8,10 +8,12 @@ public class HUD : MonoBehaviour
 {
     /*Esto declara una variable publica de tipo TextMeshProUGUI llamada puntos. 
       * Se utiliza para mostrar informaci?n textual en la interfaz de usuario del juego.*/
-    public TextMeshProUGUI puntosR;
-    public TextMeshProUGUI puntosD;
-    public TextMeshProUGUI puntosRec;
+    public TextMeshProUGUI puntosPlastico;
+    public TextMeshProUGUI puntosVidrio;
+    public TextMeshProUGUI puntosCarton;
     public TextMeshProUGUI puntosV;
+    public TextMeshProUGUI puntosReciclaje;
+
 
 
     // Start is called before the first frame update
@@ -27,11 +29,11 @@ public class HUD : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level1")
         {
-            puntosD.text = " Desechos: " + ScriptGameManager.instance.PuntosTotalesD.ToString() + "/10";
-            puntosR.text = " Reciclado: " + ScriptGameManager.instance.PuntosTotalesR.ToString() + "/10";
-            puntosRec.text = " Recoger: " + ScriptGameManager.instance.PuntosTotalesRec.ToString() + "/10";
-
-            puntosV.text =  ScriptGameManager.instance.PuntosTotalesV.ToString() + "%";
+            puntosVidrio.text = " Vidrio: " + ScriptGameManager.instance.PuntosTotalesVidrio.ToString() ;
+            puntosPlastico.text = " Plastico: " + ScriptGameManager.instance.PuntosTotalesPlastico.ToString() ;
+            puntosCarton.text = " Carton: " + ScriptGameManager.instance.PuntosTotalesCarton.ToString() ;
+            puntosReciclaje.text = "RECICLADO:   " + ScriptGameManager.instance.PuntosTotalesReciclaje.ToString() + "/100";
+            puntosV.text =  ScriptGameManager.instance.PuntosTotalesV.ToString() + " %";
 
             /*if (ScriptGameManager.instance.PuntosTotalesD == 10)
             {
@@ -45,20 +47,24 @@ public class HUD : MonoBehaviour
     }
     /*Este es un metodo publico que permite actualizar el texto del objeto puntos. 
      * Toma un argumento puntosTotales y establece el texto del objeto puntos en el valor de puntosTotales.*/
-    public void ActualizarPuntosD(int puntosTotales)
+    public void ActualizarPuntosVidrio(int puntosTotales)
     {
-        puntosD.text = puntosTotales.ToString();
+        puntosVidrio.text = puntosTotales.ToString();
     }
-    public void ActualizarPuntosR(int puntosTotales)
+    public void ActualizarPuntosReciclaje(int puntosTotales)
     {
-        puntosR.text = puntosTotales.ToString();
+        puntosReciclaje.text = puntosTotales.ToString();
+    }
+    public void ActualizarPuntosPlastico(int puntosTotales)
+    {
+        puntosPlastico.text = puntosTotales.ToString();
     }
     public void ActualizarPuntosV(int puntosTotales)
     {
         puntosV.text = puntosTotales.ToString();
     }
-    public void ActualizarPuntosRec(int puntosTotales)
+    public void ActualizarPuntosCarton(int puntosTotales)
     {
-        puntosRec.text = puntosTotales.ToString();
+        puntosCarton.text = puntosTotales.ToString();
     }
 }
