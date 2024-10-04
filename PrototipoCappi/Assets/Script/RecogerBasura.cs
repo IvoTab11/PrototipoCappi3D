@@ -6,14 +6,12 @@ using System.Linq;
 
 public class RecogerBasura : MonoBehaviour
 {
-   public GameObject basura;
-   public GameObject pickupIndicator; // Objeto visual que representa el área de recogida
+   //public GameObject basura;
+   //public GameObject pickupIndicator; // Objeto visual que representa el área de recogida
+    private GameObject currentTrash; // Almacena la referencia de la instancia de basura
+    //private bool pickupIndicator = false;
 
     private bool canPickup = false;
-    //private bool dejar = false;
-
-    // public int reciclable {get; set;}
-    // public int desechable {get; set;}
     public int carton {get; set;}
     public int plastico {get; set;}
     public int vidrio {get; set;}
@@ -24,8 +22,6 @@ public class RecogerBasura : MonoBehaviour
     void Start()
     {
        keywords.Add("recoger", () => { RecogerBasuraCommand(); });
-       //keywords.Add("dejar", () => { DejarBasuraCommand(); });
-        // Iniciar el reconocimiento de voz
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized +=  keywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
@@ -40,17 +36,15 @@ public class RecogerBasura : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que entra es el camión
+        
         if (other.CompareTag("Basura")) 
         {
+            //currentTrash = other.gameObject;
+            currentTrash = other.transform.root.gameObject;
             canPickup = true;
-            //Debug.Log("Camión dentro del área de recogida."); // Debug para verificar
+            
         }
-        // if(other.CompareTag("ContenedorGrande"))
-        // {
-        //     dejar = true;
-        //     Debug.Log("Camión dentro del área de descarga.");
-        // }
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -58,18 +52,16 @@ public class RecogerBasura : MonoBehaviour
         if (other.CompareTag("Basura"))
         {
             canPickup = false;
-            //Debug.Log("Camión fuera del área de recogida."); // Debug para verificar
+            currentTrash = null; // Limpiar la referencia al salir del área
         }
     }
 
     void RecogerBasuraCommand()
     {
-        // int reciclableAleatoria = Random.Range(1, 10);
-        // int desechableAleatoria = Random.Range(1, 10);
         int cartonAleatorio = Random.Range(1, 10);
         int plasticoAleatorio = Random.Range(1, 10);
         int vidrioAleatorio = Random.Range(1, 10);
-        if (canPickup)
+        if (canPickup && currentTrash != null)
         {
             Debug.Log("Comando de voz detectado: recoger");
             carton+=cartonAleatorio;
@@ -79,7 +71,8 @@ public class RecogerBasura : MonoBehaviour
             vidrio+=vidrioAleatorio;
             Debug.Log("Vidrio: "+ vidrio);
             ScriptGameManager.instance.SumarPuntosRec(valorSuma);
-            Destroy(basura); // Eliminar el cesto de basura
+            //Destroy(basura); // Eliminar el cesto de basura
+             Destroy(currentTrash);
             canPickup = false;
         }
     }

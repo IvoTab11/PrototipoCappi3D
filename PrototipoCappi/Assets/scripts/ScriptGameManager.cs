@@ -161,7 +161,7 @@ public class ScriptGameManager : MonoBehaviour
         hud.ActualizarPuntosR(puntosVida);
         if (puntosVida <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Game Over");
         }
 
     }
