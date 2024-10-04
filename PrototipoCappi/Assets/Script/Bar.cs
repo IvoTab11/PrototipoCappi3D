@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DentedPixel;
+using UnityEngine.SceneManagement;
 public class Bar : MonoBehaviour
 {
     public GameObject bar;
@@ -20,5 +21,8 @@ public class Bar : MonoBehaviour
 
     public void AnimateBar(){
         LeanTween.scaleX(bar, 1, time);
+        // if(time<=1){
+        //     SceneManager.LoadScene("Game Over");
+        // }
     }
 }
