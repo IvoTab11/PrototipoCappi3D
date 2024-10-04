@@ -32,7 +32,7 @@ public class HUD : MonoBehaviour
             puntosVidrio.text = " Vidrio: " + ScriptGameManager.instance.PuntosTotalesVidrio.ToString() ;
             puntosPlastico.text = " Plastico: " + ScriptGameManager.instance.PuntosTotalesPlastico.ToString() ;
             puntosCarton.text = " Carton: " + ScriptGameManager.instance.PuntosTotalesCarton.ToString() ;
-            puntosReciclaje.text = "RECICLADO:   " + ScriptGameManager.instance.PuntosTotalesReciclaje.ToString() + "/100";
+            puntosReciclaje.text = "RECICLADO:   " + ScriptGameManager.instance.PuntosTotalesReciclaje.ToString() + "/50";
             puntosV.text =  ScriptGameManager.instance.PuntosTotalesV.ToString() + " %";
 
             /*if (ScriptGameManager.instance.PuntosTotalesD == 10)

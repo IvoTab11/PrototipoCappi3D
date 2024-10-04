@@ -79,7 +79,7 @@ public class ScriptGameManager : MonoBehaviour
         Debug.Log(puntosVidrio);
         hud.ActualizarPuntosReciclaje(puntosReciclaje);
 
-        if (puntosReciclaje >= 100)
+        if (puntosReciclaje >= 50)
         {
             SceneManager.LoadScene("Win");
         }

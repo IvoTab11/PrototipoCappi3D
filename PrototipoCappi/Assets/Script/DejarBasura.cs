@@ -110,7 +110,7 @@ public class DejarBasura : MonoBehaviour
     
     void CartonCommand(){
         if(tirarCarton && recogerBasura.carton!=0){
-            int Aleatorio = Random.Range(1, 10);
+            int Aleatorio = Random.Range(1, 3);
             Debug.Log("Comando de voz detectado: carton");
             recogerBasura.carton-=recogerBasura.carton;
             ScriptGameManager.instance.RestarPuntosCarton();
@@ -121,7 +121,7 @@ public class DejarBasura : MonoBehaviour
     }
     void PlasticoCommand(){
         if(tirarPlastico && recogerBasura.plastico!=0){
-            int Aleatorio = Random.Range(1, 10);
+            int Aleatorio = Random.Range(1, 3);
             Debug.Log("Comando de voz detectado: plastico");
             recogerBasura.plastico-=recogerBasura.plastico;
             ScriptGameManager.instance.RestarPuntosPlastico();
@@ -132,7 +132,7 @@ public class DejarBasura : MonoBehaviour
     }
     void VidrioCommand(){
         if(tirarVidrio && recogerBasura.vidrio!=0){
-            int Aleatorio = Random.Range(1, 10);
+            int Aleatorio = Random.Range(1, 3);
             Debug.Log("Comando de voz detectado: vidrio");
             recogerBasura.vidrio-=recogerBasura.vidrio;
            ScriptGameManager.instance.RestarPuntosVidrio();
