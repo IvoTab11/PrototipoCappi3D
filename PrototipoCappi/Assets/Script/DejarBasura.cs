@@ -121,7 +121,7 @@ public class DejarBasura : MonoBehaviour
     }
     void PlasticoCommand(){
         if(tirarPlastico && recogerBasura.plastico!=0){
-            int Aleatorio = Random.Range(1, 3);
+            int Aleatorio = Random.Range(3, 10);
             Debug.Log("Comando de voz detectado: plastico");
             recogerBasura.plastico-=recogerBasura.plastico;
             ScriptGameManager.instance.RestarPuntosPlastico();

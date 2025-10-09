@@ -22,7 +22,7 @@ public class MainPanel : MonoBehaviour
     public GameObject levelSelectPanel;
 
     public void PlayLevel(string levelName){
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene("level1");
     }
     public void SetMute(){
        
